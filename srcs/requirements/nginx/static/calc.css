@@ -1,0 +1,41 @@
+body {
+	align-content: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: pink;
+	background-image: url("https://thumbs.dreamstime.com/b/hand-drawn-study-seamless-pattern-school-accessories-sketch-background-icons-monochrome-doodles-illustration-wallpaper-83311670.jpg");
+}
+
+h1{
+	font-family: 'Dekko';
+	font-size: 200px;
+	border-radius: 50px;
+	letter-spacing: -1px;
+	background-color: black;
+	color: pink;
+	box-shadow: 12px 12px 12px 1px deeppink;
+}
+
+form{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+label, input, select, option {
+	font-size: 40px;
+	border-radius: 10px;
+	background-color: grey;
+	color: white;
+	font-family: 'Dekko';
+	box-shadow: 10px 5px 5px black;
+	margin: 10px;
+}
+
+::placeholder {
+	font-size: 40px;
+	background-color: grey;
+	color: white;
+	font-family: 'Dekko';
+}

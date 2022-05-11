@@ -1,0 +1,30 @@
+body, html {
+	height: 100%;
+  }
+  
+.parallax {
+	height: 100%; 
+  
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.slide{
+	height:800px;
+	background-color:black;
+	font-size:60px;
+	color: white;
+	align-content: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#un {
+	background-image: url("https://assets-eu-01.kc-usercontent.com/d0ab3c4d-3ec6-0150-71bd-939f3db14bb9/d5972ac7-abe5-4c3f-9a1a-3b82639223fe/south-korea.jpg?fit=crop&fm=jpg&auto=format&dpr=1&w=768&h=432");
+}
+
+#deux {
+	background-image: url("https://www.flyingsmart.info/wp-content/uploads/2020/04/IMG_20190929_124009-1024x768.jpg");
+}

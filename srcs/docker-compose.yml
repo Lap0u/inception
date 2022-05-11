@@ -1,0 +1,58 @@
+version: "3.3"
+
+networks:
+    inception_net:
+      driver: bridge
+
+services:
+  nginx:
+    image: nginx:1.0
+    build: ./requirements/nginx
+    container_name: nginx
+    env_file: .env
+    volumes:
+      - wpfiles:/var/www/html/
+    networks:
+      - inception_net
+    ports:
+      - "443:443"
+    depends_on:
+      - wordpress
+    restart: unless-stopped
+
+  maria-db:
+    image: maria-db:1.0
+    build: ./requirements/mariadb
+    container_name: maria-db
+    env_file: .env
+    volumes:
+      - wpdb:/var/www/html/
+    networks:
+      - inception_net
+    restart: unless-stopped
+  wordpress:
+    image: wordpress:1.0
+    build: ./requirements/wordpress
+    container_name: wordpress
+    env_file: .env
+    volumes:
+      - wpfiles:/var/www/html
+    networks:
+      - inception_net
+    depends_on:
+      - "maria-db"
+    restart: unless-stopped
+
+volumes:
+  wpdb:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/cbeaurai/data/wpdb'
+  wpfiles:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/cbeaurai/data/wpfiles'
